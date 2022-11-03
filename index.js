@@ -28,7 +28,13 @@ const exampleMovies = require("./movies");
       "James and the Giant Peach",
     ];
  */
-function getAllMovieTitles() {}
+function getAllMovieTitles(movies) {
+  let movieArr = [];
+  for (let movie of movies){
+    movieArr.push(movie.title);
+  }
+return movieArr;
+}
 
 /**
  * getHighestMetascore()
@@ -41,7 +47,34 @@ function getAllMovieTitles() {}
  *  getHighestMetascore(movies);
  *  //> 96
  */
-function getHighestMetascore() {}
+function getHighestMetascore(movies) {
+  /*think of getLongestDinosaur.
+  function getLongestDinosaur(dinosaurs) {
+  let object = {};
+  let length = 0; //<- will be converted to feet in for loop
+  //Length must be converted to feet.
+  if (dinosaurs.length === 0) {
+    return object;
+    //if there are no dinosaurs return an empty object
+  } for (let i = 0; i < dinosaurs.length; i++) {
+    if (dinosaurs[i].lengthInMeters > length) {
+      length = dinosaurs[i].lengthInMeters;
+      dinoKey = dinosaurs[i].name;
+      lengthInFeet = length * 3.281;
+    }
+  } object[dinoKey] = lengthInFeet;
+  return object; */
+if (!movies.length){
+  return movies.length;
+}
+let highestMetascore = Number(movies[0].metascore)
+for (let i = 0; i < movies.length; i++){
+if (movies[i].metascore > highestMetascore){
+  highestMetascore = movies[i].metascore;
+}
+} return Number(highestMetascore)
+
+}
 
 /**
  * getAverageIMDBRating()
