@@ -179,7 +179,43 @@ return matching
  *  filterByGenre(movies, "Horror")
  *  //> []
  */
-function filterByGenre() {}
+function filterByGenre(movies, genre) {
+  let arr = [];
+let genresFormatted = genre[0].toUpperCase() + genre.slice(1).toLowerCase();
+for (let movie of movies){
+  if (movie.genre.includes(genresFormatted)){
+    arr.push(movie)
+  }
+} return arr
+
+}
+  
+  //  function formatGenre(genre){
+  //    genresFormatted = genre[0].toUpperCase() + genre.slice(1).toLowerCase();
+  // return genresFormatted
+  // }
+  // //console.log(formatGenre(genre))
+  //  if (!movies.length || !movies.includes(formatGenre(genre))){
+  // return arr
+  //  } else {
+  //  for (const movie of movies){
+  //  moviesFormatted = movie.genre[0]+movie.slice(1).toLowerCase();
+  //  if (moviesFormatted.includes(formatGenre(genre))){
+  //   arr.push(movie)
+  //  }
+  // }
+  // }return arr
+  // }
+  //   for (const movie of movies){
+    //     genresFormatted = movie.genre.toLowerCase();
+//   for (let i = 0; i < movie.length; i++){
+//     if (genresFormatted[i].includes(genre)){
+//       arr.push(movies[i])
+//     }
+//   }
+  
+//   return arr
+// }
 
 /**
  * getAllMoviesReleasedAtOrBeforeYear()
