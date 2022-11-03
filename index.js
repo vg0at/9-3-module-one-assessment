@@ -148,11 +148,11 @@ function countByRating(movies) {
     };
  */
 function findById(movies, id) {
-let matching = null;
+let matching = null;//if array is empty, return null
 if (!movies.length){
-return null;
+return null; 
 } for (let i = 0; i < movies.length; i++){
-  if (movies[i].imdbID === id)
+  if (movies[i].imdbID === id) //if movie at index's imdb id matches id param, return the movie object that matched the id param.
   matching = movies[i]
 }
 
@@ -181,7 +181,8 @@ return matching
  */
 function filterByGenre(movies, genre) {
   let arr = [];
-let genresFormatted = genre[0].toUpperCase() + genre.slice(1).toLowerCase();
+let genresFormatted = genre[0].toUpperCase() + genre.slice(1).toLowerCase(); 
+//genre: "FANTASY" //> "Fantasy"
 for (let movie of movies){
   if (movie.genre.includes(genresFormatted)){
     arr.push(movie)
@@ -239,7 +240,21 @@ for (let movie of movies){
       }
     ];
  */
-function getAllMoviesReleasedAtOrBeforeYear() {}
+function getAllMoviesReleasedAtOrBeforeYear(movies, year) {
+  let arr = [];
+  //movies.released = "NumNum Str NumNumNumNum" and length is always 11.
+  //Number x2(1,2), space (3), stringMonth(4,5,6), space(7), year(8,9,10,11)
+  //use slice() method to get just the year.
+  // for (movie of movies){
+  // console.log(movie.released.length)
+  
+for (const movie of movies){
+  if(movie.released.slice(7) <= year) //at or before. lesser or equal
+arr.push(movie)
+}
+return arr
+}
+
 
 /**
  * getBiggestBoxOfficeMovie()
