@@ -87,7 +87,16 @@ if (movies[i].metascore > highestMetascore){
  *  getAverageIMDBRating(movies);
  *  //> 7.76
  */
-function getAverageIMDBRating() {}
+function getAverageIMDBRating(movies) {
+  let sum = 0;
+  if (!movies.length){
+    return movies.length;
+  }
+  for (const rating of movies){
+    sum += Number(rating.imdbRating) //the average is the sum of all numbers divided by the quantity of numbers added together
+    averageRating  = sum / movies.length //divide by the amount of movies because they each have one imdb rating value
+  } return averageRating;
+}
 
 /**
  * countByRating()
@@ -100,7 +109,21 @@ function getAverageIMDBRating() {}
  *  countByRating(movies);
  *  //> { G: 3, PG: 7 }
  */
-function countByRating() {}
+function countByRating(movies) {
+  let obj = {};
+  if (!movies.length){
+    return obj;
+  } else {
+    for (const movie of movies){
+      const rated = movie.rated;
+      if (movie.rated.includes(rated)){
+        obj[rated] += 1
+      } 
+       
+      }
+    } return obj
+    }
+
 
 /**
  * findById()
