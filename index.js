@@ -115,15 +115,23 @@ function countByRating(movies) {
     return obj;
   } else {
     for (const movie of movies){
-      const rated = movie.rated;
-      if (movie.rated.includes(rated)){
-        obj[rated] += 1
-      } 
-       
+      const rated = movie.rated; //we will assign this as the key in obj{};
+      if (rated in obj) {
+        obj[rated]++;
+      } else {
+        obj[rated] = 1
       }
-    } return obj
     }
-
+  } return obj
+}
+//       if (movie.rated.includes(rated)){
+//         obj[rated] += 1
+//       } else{
+//         obj[rated = 1]
+//       }
+//     }
+//   } return obj
+// }
 
 /**
  * findById()
@@ -139,7 +147,17 @@ function countByRating(movies) {
       // Toy Story 4
     };
  */
-function findById() {}
+function findById(movies, id) {
+let matching = null;
+if (!movies.length){
+return null;
+} for (let i = 0; i < movies.length; i++){
+  if (movies[i].imdbID === id)
+  matching = movies[i]
+}
+
+return matching
+}
 
 /**
  * filterByGenre()
