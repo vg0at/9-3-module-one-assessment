@@ -267,7 +267,52 @@ return arr
  *  getBiggestBoxOfficeMovie(movies);
  *  //> "Incredibles 2"
  */
-function getBiggestBoxOfficeMovie() {}
+function getBiggestBoxOfficeMovie(movies) {
+  if (!movies.length){
+    return null;
+  }
+let highestNum = 0;
+let highestTitle = ``;
+for (const movie of movies){
+  dollarConverted = Number(movie.boxOffice.slice(1).replaceAll(',', ''));
+  if (dollarConverted > Number(highestNum)){
+    highestNum = dollarConverted;
+  highestTitle = movie.title
+  }return highestTitle
+}
+}
+  /*thinking of getHighestMetascore();
+let highestMetascore = Number(movies[0].metascore)
+for (let i = 0; i < movies.length; i++){
+if (movies[i].metascore > highestMetascore){
+  highestMetascore = movies[i].metascore;
+}
+} return Number(highestMetascore) */
+// let num = null
+// let highestNum = movies[0]
+// for (const movie of movies){
+//function convertDolla(string) {
+ // dollarConverted = Number(movie.boxOffice.slice(1).replaceAll(',', ''));
+//   return dollarConverted;
+//   // console.log(dollarConverted) 
+//    // "$76,408,097" //> 76408097
+// }
+// if (!movies.length){
+//   return num;
+// } else {
+
+// for (let i = 0 ; i < movies.length; i++){
+//   const num = dollarConverted(movie.boxOffice);
+//   const highestNumConverted = dollarConverted(highestNum)
+// if (num > highestNumConverted){
+//   return movie.name
+// }
+// }
+// }
+// } 
+// }
+
+
 
 // Do not change anything below this line.
 module.exports = {
